@@ -19,4 +19,8 @@ class FrontendController extends Controller
     {
         return view('Frontend.User.cart');
     }
+    public function checkout()
+    {
+        return view('Frontend.User.checkout');
+    }
 }
