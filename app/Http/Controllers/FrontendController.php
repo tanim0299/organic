@@ -23,4 +23,8 @@ class FrontendController extends Controller
     {
         return view('Frontend.User.checkout');
     }
+    public function confirm_order()
+    {
+        return view('Frontend.User.order_complete');
+    }
 }

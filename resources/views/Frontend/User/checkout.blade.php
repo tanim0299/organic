@@ -9,11 +9,11 @@
             <div class="items">
                 <div class="products-itmes">
                     <ul>
-                        <li><a href="{{url('/cart')}}">Shopping Cart </a></li>
+                        <li><span>Shopping Cart </span></li>
                         <li><i class="fa fa-chevron-right" style="color: white;"></i></li>
                         <li style="border-bottom:2px solid #83b735;"><a href="{{url('/checkout')}}">Checkout</a></li>
                         <li><i class="fa fa-chevron-right" style="color: white;"></i></li>
-                        <li><a href="#">Order Complete</a></li>
+                        <li><span>Order Complete</span></li>
                     </ul>
                 </div>
             </div>
@@ -24,80 +24,75 @@
 <div class="prouducts-area container">
     <div class="order-system">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-12">
-                <div class="order-table">
-                    <div class="table-responsive mt-4" id="order-table">
-                        <table class="table table-hover">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="billilng_details">
+                    <div class="bill-input-single">
+                        <label>Name</label><span>*</span>
+                        <input type="text" class="form-control" placeholder="Place Your Name">
+                    </div>
+                    <div class="bill-input-single">
+                        <label>Division</label><span>*</span>
+                        <select class="form-control">
+                            <option>Select One</option>
+                        </select>
+                    </div>
+                    <div class="bill-input-single">
+                        <label>District</label><span>*</span>
+                        <select class="form-control">
+                            <option>Select One</option>
+                        </select>
+                    </div>
+                    <div class="bill-input-single">
+                        <label>Upazila</label><span>*</span>
+                        <select class="form-control">
+                            <option>Select One</option>
+                        </select>
+                    </div>
+                    <div class="bill-input-single">
+                        <label>Address</label><span>*</span>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="bill-input-single">
+                        <label>Mobile</label><span>*</span>
+                        <input type="text" class="form-control" placeholder="Place Your Name">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="order-box">
+                    <div class="box-title">
+                        <b>Your Order</b>
+                    </div>
+                    <div class="your-order mt-4">
+                        <table class="table bg-white">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Subtotal</th>
+                                    <th style="text-align: right">Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><a id="delete_product" href="#">X</a></td>
-                                    <td>Honey</td>
-                                    <td>250/-</td>
-                                    <td>
-                                        <input type="number" class="form-control col-3" id="qunatity" value="1">
-                                    </td>
-                                    <td>250/-</td>
+                                    <td>Khaas Firni Mix  × 1</td>
+                                    <td style="text-align: right">250/-</td>
                                 </tr>
                                 <tr>
-                                    <td><a id="delete_product" href="#">X</a></td>
-                                    <td>Honey</td>
-                                    <td>250/-</td>
-                                    <td>
-                                        <input type="number" class="form-control col-3" id="qunatity" value="1">
-                                    </td>
-                                    <td>250/-</td>
+                                    <td style="font-weight: bold">Subtotal</td>
+                                    <td style="text-align: right;font-weight:bold">250/-</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold">Shipping</td>
+                                    <td style="text-align: right;font-weight:bold">250/-</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;font-size:20px">Total</td>
+                                    <td style="text-align: right;font-weight:bold;font-size:20px">250/-</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="cart-total-box">
-                    <div class="cart-heading">
-                        <b>Cart Total</b>
-                    </div>
-                    <div class="line">
-                        <div class="row">
-                            <div class="col-8">
-                                <b>Sub Total</b>
-                            </div>
-                            <div class="col-4">
-                                <b>250/-</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <div class="row">
-                            <div class="col-8">
-                                <b>Sub Total</b>
-                            </div>
-                            <div class="col-4">
-                                <b>250/-</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <div class="row">
-                            <div class="col-8">
-                                <b>Sub Total</b>
-                            </div>
-                            <div class="col-4">
-                                <b>250/-</b>
-                            </div>
-                        </div>
-                    </div>
                     <div class="checkout-link">
-                        <a href="{{url('/checkout')}}">Proceed To Checkout</a>
+                        <a class="btn-block" href="{{url('/confirm_order')}}">Place Order</a>
                     </div>
                 </div>
             </div>

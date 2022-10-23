@@ -11,9 +11,9 @@
                     <ul>
                         <li style="border-bottom:2px solid #83b735;"><a href="{{url('/cart')}}">Shopping Cart </a></li>
                         <li><i class="fa fa-chevron-right" style="color: white;"></i></li>
-                        <li><a href="{{url('/checkout')}}">Checkout</a></li>
+                        <li><span>Checkout</span></li>
                         <li><i class="fa fa-chevron-right" style="color: white;"></i></li>
-                        <li><a href="#">Order Complete</a></li>
+                        <li><span>Order Complete</span></li>
                     </ul>
                 </div>
             </div>
