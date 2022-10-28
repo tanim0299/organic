@@ -33,7 +33,21 @@
                     <b>Billing Info</b>
                 </div>
                 <div class="billing_info">
-                    <b>Name :</b> <span>Sumsul Karim Chowdhury</span>
+                    <b>Name :</b> <span>Sumsul Karim Chowdhury</span><br>
+                    <b>Adress :</b> <span>Sumsul Karim Chowdhury</span><br>
+                </div>
+                <div class="order-details mt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Product Name</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>

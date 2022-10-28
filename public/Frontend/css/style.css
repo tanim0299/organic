@@ -901,6 +901,30 @@ div#discounttag {
     top: -10px;
     background-position: -3px -5px,0 0;
 }
+.product-description {
+    border-top: 1px solid lightgray;
+    margin-top: 26px;
+}
+.product-details {
+    margin-top: 43px;
+}
+
+.product-name b {
+    font-size: 26px;
+}
+
+.product-price {
+    margin-top: 10px;
+}
+
+.product-price b {
+    font-size: 18px;
+}
+
+.quantity {
+    margin-top: 21px;
+    margin-bottom: 36px;
+}
 /* responsive css */
 @media screen and (max-width:992px){
 

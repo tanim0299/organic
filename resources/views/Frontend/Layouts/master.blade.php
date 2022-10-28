@@ -19,7 +19,30 @@
     {{-- ui kit --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
     {{-- ui kit --}}
+
+    {{-- lens --}}
+    {{-- <link rel="stylesheet" href="{{asset('public/Lens')}}/css/normalize.css" />
+    <link rel="stylesheet" href="{{asset('public/Lens')}}/css/foundation.css" />
+    <link rel="stylesheet" href="{{asset('public/Lens')}}/css/demo.css" /> --}}
+    <script src="{{asset('public/Lens')}}/js/vendor/modernizr.js"></script>
+    <script src="{{asset('public/Lens')}}/js/vendor/jquery.js"></script>
+    <!-- xzoom plugin here -->
+    <script type="text/javascript" src="{{asset('public/Lens')}}/dist/xzoom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('public/Lens')}}/dist/xzoom.css" media="all" /> 
+    <!-- hammer plugin here -->
+    <script type="text/javascript" src="{{asset('public/Lens')}}/hammer.js/1.0.5/jquery.hammer.min.js"></script>  
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link type="text/css" rel="stylesheet" media="all" href="{{asset('public/Lens')}}/fancybox/source/jquery.fancybox.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="{{asset('public/Lens')}}/magnific-popup/css/magnific-popup.css" />
+    <script type="text/javascript" src="{{asset('public/Lens')}}/fancybox/source/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="{{asset('public/Lens')}}/magnific-popup/js/magnific-popup.js"></script>      
 </head>
+<style type="text/css">
+    
+
+    
+
+    </style>
 <body>
     <header id="header-area">
         {{-- top header area --}}
@@ -322,7 +345,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     {{-- fantawsome  --}}
@@ -336,5 +359,11 @@
     <!-- UIkit JS -->
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+<script src="{{asset('public/Lens')}}/js/foundation.min.js"></script>
+    <script src="{{asset('public/Lens')}}/js/setup.js"></script>
+<script>
+    $(".xzoom").xzoom();
+</script>
+
 </body>
 </html>

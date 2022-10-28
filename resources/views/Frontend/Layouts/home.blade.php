@@ -235,7 +235,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <a href="#" class="cat">
+                        <a href="{{url('/product_single')}}" class="cat">
                             <div class="image">
                                 <img src="{{asset('public/Frontend/images/product')}}/1.webp" alt="" class="img-fluid">
                             </div>

@@ -27,4 +27,8 @@ class FrontendController extends Controller
     {
         return view('Frontend.User.order_complete');
     }
+    public function product_single()
+    {
+        return view('Frontend.User.product_single');
+    }
 }
