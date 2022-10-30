@@ -24,3 +24,7 @@ Route::get('/cart',[FrontendController::class,'cart']);
 Route::get('/checkout',[FrontendController::class,'checkout']);
 Route::get('/confirm_order',[FrontendController::class,'confirm_order']);
 Route::get('/product_single',[FrontendController::class,'product_single']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

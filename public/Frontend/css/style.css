@@ -925,6 +925,32 @@ div#discounttag {
     margin-top: 21px;
     margin-bottom: 36px;
 }
+.thanks-message b {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.thanks-message {
+    margin-top: 20px;
+    border: 1px dashed #83b735;
+    padding: 17px;
+}
+
+.order-info {
+    margin-top: 30px;
+}
+
+.order-info li {
+    list-style: none;
+    display: inline-block;
+    padding: 11px 29px;
+    font-size: 14px;
+    border-right: 1px solid lightgray;
+}
+
+.order-info li:last-child {
+    border-right: none;
+}
 /* responsive css */
 @media screen and (max-width:992px){
 
