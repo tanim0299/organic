@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Backend\BackendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,4 @@ Route::get('/product_single',[FrontendController::class,'product_single']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [BackendController::class, 'index'])->name('home');
