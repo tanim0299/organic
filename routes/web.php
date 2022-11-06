@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Backend\BackendController;
+use App\Http\Controllers\Backend\MainMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,7 @@ Route::get('/product_single',[FrontendController::class,'product_single']);
 Auth::routes();
 
 Route::get('/dashboard', [BackendController::class, 'index'])->name('home');
+
+Route::resources([
+    'main_menu'=>MainMenuController::class,
+]);

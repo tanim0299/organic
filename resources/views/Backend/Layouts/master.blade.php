@@ -38,6 +38,7 @@
     <link href="{{asset('public/Backend')}}/vendors/leaflet/leaflet.css" rel="stylesheet">
     <link href="{{asset('public/Backend')}}/vendors/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
     <link href="{{asset('public/Backend')}}/vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
+    <link href="{{asset('public/Backend')}}/style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -62,27 +63,14 @@
                 </li>    
                 <li class="nav-item">
                   {{-- menu with dropdown --}}
-                  <a class="nav-link dropdown-indicator" href="#home" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="home">
+                  <a class="nav-link dropdown-indicator" href="#project-management" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="project-management">
                     <div class="d-flex align-items-center">
-                      <div class="dropdown-indicator-icon d-flex flex-center"><span class="fas fa-caret-right fs-0"></span></div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Home</span>
+                      <div class="dropdown-indicator-icon d-flex flex-center"><span class="fas fa-caret-right fs-0"></span></div><span class="nav-link-icon"><span data-feather="box"></span></span><span class="nav-link-text">Developer Option</span>
                     </div>
                   </a>
-                  <ul class="nav collapse parent" id="home">
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.html" data-bs-toggle="collapse" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">E commerce</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard/project-management.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Project management</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="landing.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Landing</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/social/feed.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Social feed</span></div>
+                  <ul class="nav collapse parent" id="project-management">
+                    <li class="nav-item"><a class="nav-link" href="{{url('/main_menu')}}" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text">Create A Main Menu</span></div>
                       </a><!-- more inner pages-->
                     </li>
                   </ul>
@@ -93,45 +81,22 @@
                   <!-- label-->
                   <p class="navbar-vertical-label">Apps</p>
 
-                  <a class="nav-link dropdown-indicator" href="#project-management" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="project-management">
-                    <div class="d-flex align-items-center">
-                      <div class="dropdown-indicator-icon d-flex flex-center"><span class="fas fa-caret-right fs-0"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Project management</span>
-                    </div>
-                  </a>
-                  <ul class="nav collapse parent" id="project-management">
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/create-new.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Create new</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/project-list-view.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Project list view</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/project-card-view.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Project card view</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/project-board-view.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Project board view</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/todo-list.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Todo list</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="apps/project-management/project-details.html" data-bs-toggle="" aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-text">Project details</span></div>
-                      </a><!-- more inner pages-->
-                    </li>
-                  </ul>
 
 
                 </li>
               </ul>
             </div>
 
+            
+            <div class="navbar-vertical-footer"><a class="btn btn-link border-0 fw-semi-bold d-flex ps-0" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+               <span class="navbar-vertical-footer-icon" data-feather="log-out"></span><span>Sign out</span>
+           </a></div>
 
-            <div class="navbar-vertical-footer"><a class="btn btn-link border-0 fw-semi-bold d-flex ps-0" href="pages/authentication/simple/sign-out.html"><span class="navbar-vertical-footer-icon" data-feather="log-out"></span><span>Sign out</span></a></div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
           </div>
         </nav>
         <nav class="navbar navbar-light navbar-top navbar-expand vertical-navbar">
@@ -263,6 +228,7 @@
         </nav>
 @yield('body')
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -285,7 +251,17 @@
     <script src="{{asset('public/Backend')}}/vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
     <script src="{{asset('public/Backend')}}/assets/js/ecommerce-dashboard.js"></script>
   </body>
-
-
+  <script type="text/javascript">
+   
+    $.ajaxSetup({
+         headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+ 
+     $('#loading').hide();
+ 
+     
+ </script>
 <!-- Mirrored from prium.github.io/phoenix/v1.5.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Oct 2022 15:53:13 GMT -->
 </html>

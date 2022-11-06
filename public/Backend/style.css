@@ -1,0 +1,58 @@
+.form-section {
+    background: white;
+    border-radius: 8px;
+}
+
+.form-title {
+    border-bottom: 1px solid lightgray;
+    padding: 16px 18px;
+}
+.form-body {
+    margin-top: 20px;
+    padding: 0px 18px;
+}
+.input-single-box label {
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.input-single-box input:focus {
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.input-single-box input {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid lightgray;
+}
+.input-single-box select:focus {
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.input-single-box select {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid lightgray;
+}
+.input-single-box textarea:focus {
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.input-single-box textarea {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid lightgray;
+}
+span#basic-addon1 {
+    border-radius: 0px;
+    background: #222834;
+    border: 2px solid lightgrey;
+    color: white;
+}
+.submit-btn {
+    text-align: center;
+    margin-top: 20px;
+}
