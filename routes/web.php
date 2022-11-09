@@ -34,3 +34,4 @@ Route::get('/dashboard', [BackendController::class, 'index'])->name('home');
 Route::resources([
     'main_menu'=>MainMenuController::class,
 ]);
+// Route::post('/main_menu_store',[MainMenuController::class,'store']);

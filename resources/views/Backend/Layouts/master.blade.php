@@ -26,6 +26,13 @@
     <meta name="theme-color" content="#ffffff">
     <script src="{{asset('public/Backend')}}/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    
+    
+
+
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
@@ -39,6 +46,7 @@
     <link href="{{asset('public/Backend')}}/vendors/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
     <link href="{{asset('public/Backend')}}/vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
     <link href="{{asset('public/Backend')}}/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
   </head>
 
   <body>
@@ -228,10 +236,10 @@
         </nav>
 @yield('body')
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('public/Backend')}}/vendors/popper/popper.min.js"></script>
     <script src="{{asset('public/Backend')}}/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="{{asset('public/Backend')}}/vendors/anchorjs/anchor.min.js"></script>
@@ -250,18 +258,38 @@
     <script src="{{asset('public/Backend')}}/vendors/leaflet.markercluster/leaflet.markercluster.js"></script>
     <script src="{{asset('public/Backend')}}/vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
     <script src="{{asset('public/Backend')}}/assets/js/ecommerce-dashboard.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+    </script>
+
+
+@if(Session::has('success'))
+  <script>
+      swal('Good Job!', '{{ Session::get('success') }}', 'success');
+  </script>
+
+@endif
+
+@if(Session::has('error'))
+  <script>
+      swal('Oops!', '{{ Session::get('error') }}', 'error');
+  </script>
+
+@endif
+
+@if(Session::has('info'))
+  <script>
+      swal('Oops!', '{{ Session::get('info') }}', 'info');
+  </script>
+
+@endif
+
+
   </body>
-  <script type="text/javascript">
-   
-    $.ajaxSetup({
-         headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-         }
-     });
- 
-     $('#loading').hide();
- 
-     
- </script>
+  
 <!-- Mirrored from prium.github.io/phoenix/v1.5.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Oct 2022 15:53:13 GMT -->
 </html>

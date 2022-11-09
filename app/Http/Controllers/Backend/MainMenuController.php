@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\admin_main_menu;
 
 class MainMenuController extends Controller
 {
@@ -14,7 +15,10 @@ class MainMenuController extends Controller
      */
     public function index()
     {
-        return view('Backend.User.MainMenu.index');
+        $data = admin_main_menu::all();
+        $sl=1;
+        // return $data;
+        return view('Backend.User.MainMenu.index',compact('data','sl'));
     }
 
     /**
@@ -35,7 +39,26 @@ class MainMenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->sl;
+
+        // return $request->sl;
+
+        $insert = admin_main_menu::insert([
+            'sl'=>$request->sl,
+            'menu_name'=>$request->menu_name,
+            'icon_name'=>$request->icon_name,
+            'status'=>$request->status,
+        ]);
+
+        if($insert)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+        
     }
 
     /**
@@ -46,7 +69,7 @@ class MainMenuController extends Controller
      */
     public function show($id)
     {
-        //
+        // return $id;
     }
 
     /**
@@ -57,7 +80,8 @@ class MainMenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = admin_main_menu::find($id);
+        return view('Backend.User.MainMenu.edit',compact('data'));
     }
 
     /**
@@ -69,7 +93,26 @@ class MainMenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'sl'=>'required',
+            'menu_name'=>'required|min:3',
+        ],[
+            'sl.requried'=>'This Serial Number Is Required',
+            'menu_name.required'=>'Please Give A Menu Name',
+            'menu_name.min'=>'Menu Name Must Be At Least 3 Character',
+        ]);
+
+        $update = admin_main_menu::where('id',$id)
+                  ->update($request->except('_token','_method'));
+
+        if($update)
+        {
+            return redirect('/main_menu')->with('success','Menu Information Updated');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Menu Informaiton Update Unsuccessfull');
+        }
     }
 
     /**
@@ -80,6 +123,15 @@ class MainMenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // return $id;
+        $delete = admin_main_menu::find($id)->delete();
+        if($delete)
+        {
+            return redirect()->back()->with('success','Data Delete Successfully');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Data Delete Unsuccessfull');
+        }
     }
 }

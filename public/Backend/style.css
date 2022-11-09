@@ -40,6 +40,9 @@
     box-shadow: none;
     border-radius: 0px;
 }
+.badge.badge-success {
+    background: green;
+}
 
 .input-single-box textarea {
     border-radius: 0px;
@@ -55,4 +58,25 @@ span#basic-addon1 {
 .submit-btn {
     text-align: center;
     margin-top: 20px;
+}
+.in-valid {
+    border: 1px solid red !important;
+}
+td {
+    border-top: 1px solid lightgray !important;
+    padding-left: 10px !important;
+}
+
+th {
+    border-top: 1px solid lightgray !important;
+    padding-left: 10px !important;
+}
+.alert.alert-danger {
+    padding: 0px;
+    border-radius: 0px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    font-size: 12px;
 }
